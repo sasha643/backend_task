@@ -23,7 +23,7 @@ Setup
 git clone https://github.com/your-username/linkedin-scraper.git
 cd linkedin-scraper
 
-3. Environment Variables
+2. Environment Variables
    
 Create a .env file in the root directory to store your LinkedIn credentials:
 
@@ -45,7 +45,7 @@ Start the container, which includes Redis and the Playwright-based scraping serv
    
 The scraper starts automatically when the Docker container is run. It will begin scraping the LinkedIn profile specified in src/main.py.
 
-6. Data Output
+5. Data Output
    
 Scraped data will be saved in the /app/data directory inside the Docker container. To access this data:
 
