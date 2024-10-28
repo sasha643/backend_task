@@ -16,14 +16,15 @@ docker cp linkedin_scraper_container:/app/data ./data
 
 # For Local Setup (Without Docker)
 
-# Install dependencies using Poetry
+## Install dependencies using Poetry
 poetry install
 
-# Install Playwright browsers
+## Install Playwright browsers
 poetry run playwright install
 
-# Start Redis server (if Redis is used)
-redis-server &
+## Start Redis server (if Redis is used)
+redis-server
 
-# Run the scraper
-python src/main.py
+## Run the scraper
+python src/seed_initial_profiles.py 
+python src/main.py <linkedin_username> <linkedin_password>
