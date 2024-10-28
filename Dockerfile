@@ -42,4 +42,6 @@ RUN mkdir -p /app/data
 
 ENV DATA_DIR=/app/data
 
+RUN python src/seed.py
+
 CMD ["python", "src/main.py"]
