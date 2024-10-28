@@ -14,7 +14,6 @@ class LinkedInScraper:
         self.login_successful = False
 
     async def login(self, page):
-        """Login to LinkedIn."""
         print("Navigating to login page...")
         await page.goto("https://www.linkedin.com/login", wait_until="load")
         print("Filling in login details...")
@@ -26,7 +25,6 @@ class LinkedInScraper:
         print("Login successful.")
 
     async def scrape_profile(self, page, profile_url):
-        """Scrape posts from a given profile URL and store them in a file."""
         print(f"Scraping profile: {profile_url}...")
         try:
             await page.goto(profile_url, wait_until="load")
@@ -47,7 +45,6 @@ class LinkedInScraper:
             return []
 
     def save_posts_to_file(self, profile_url, posts):
-        """Save scraped posts to a JSON file."""
         dir_path = "C:/Users/Saurabh/Desktop/LinkedIn_scraper/data"
         file_name = "scraped_posts.json"
         file_path = os.path.join(dir_path, file_name)
@@ -66,7 +63,6 @@ class LinkedInScraper:
             print(f"Error saving posts to file: {e}")
 
     async def run(self):
-        """Continuously process profiles from the queue until the desired number is reached."""
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=False)  # Set headless=False to see the browser
             page = await browser.new_page()
@@ -92,6 +88,5 @@ class LinkedInScraper:
             await browser.close()
 
     async def close(self, browser):
-        """Close the browser."""
         await browser.close()
 
