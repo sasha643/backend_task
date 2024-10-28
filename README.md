@@ -27,3 +27,5 @@ redis-server
 
 ## Run the scraper
 python src/seed_initial_profiles.py || python src/main.py <linkedin_username> <linkedin_password>
+
+![architecture](architecture.png)
